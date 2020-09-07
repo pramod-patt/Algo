@@ -28,6 +28,11 @@ namespace Algo2020.Sorting
             {
                 var lastMergedMeetings = mergedMeetings.Last();
 
+                //var meetings = new List<Meeting>() //sample input
+                //{
+                //    new Meeting(1, 3), new Meeting(2, 4)
+                //};
+
                 if (cm.StartTime <= lastMergedMeetings.EndTime)
                 {
                     lastMergedMeetings.EndTime = Math.Max(lastMergedMeetings.EndTime, cm.EndTime);
