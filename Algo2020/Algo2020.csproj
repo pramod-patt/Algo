@@ -71,7 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recurssion.cs" />
     <Compile Include="SortingAlg.cs" />
-    <Compile Include="Sorting\MergeMeetings.cs" />
+    <Compile Include="Sorting\MeetingIntervals.cs" />
     <Compile Include="StringAlgo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Algo2020.Sorting
 {
-   public class MergeMeetings
+   public class MeetingIntervals
     {
 
         /// <summary>
@@ -44,6 +44,40 @@ namespace Algo2020.Sorting
             }
 
             return mergedMeetings;
+        }
+
+        /// <summary>
+        /// L252 - Meeting Rooms
+        /// Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), determine if a person could attend all meetings.
+        /// Input: [[0,30],[5,10],[15,20]]
+        /// Output: false
+        /// Input: [[7,10],[2,4]]
+        /// Output: true
+        /// </summary>
+        /// <param name="meetings"></param>
+        /// <returns></returns>
+        public bool CheckPersonCanAttendMeetings(List<Meeting> meetings)
+        {
+            // base case
+            if (meetings.Count == 0)
+                return false;
+
+            //sort the meeting object by meeting start time
+            var sortedMeetings = meetings.Select(m => new Meeting(m.StartTime, m.EndTime)).OrderBy(m => m.StartTime).ToList();
+
+            for (int i = 0; i < sortedMeetings.Count; i++)
+            {
+                if (sortedMeetings[i].EndTime > sortedMeetings[i + 1].EndTime)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
